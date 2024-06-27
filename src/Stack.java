@@ -1,13 +1,13 @@
 class Node<T>{
     T data;
-    Node<T> next;
+    QueueNode<T> next;
     Node(T val){
         this.data=val;
         this.next=null;
     }
 }
 public class Stack<T> {
-    private Node<T> top;
+    private QueueNode<T> top;
 
     public Stack() {
         this.top = null;
@@ -20,9 +20,9 @@ public class Stack<T> {
         stack.display();
     }
     public void push(int val){
-        Node<T> newNode=new Node(val);
-        newNode.next=top;
-        top=newNode;
+        QueueNode<T> newQueueNode =new QueueNode(val);
+        newQueueNode.next=top;
+        top= newQueueNode;
     }
     public T pop(){
         if (top==null){
@@ -44,7 +44,7 @@ public class Stack<T> {
     public int size(){
         if (top==null) return 0;
         int c=0;
-        Node<T> check=top;
+        QueueNode<T> check=top;
         while (check!=null){
             c++;
             check=check.next;
@@ -53,7 +53,7 @@ public class Stack<T> {
     }
     public void display(){
         if (top==null) System.out.println("Stack is empty");
-        Node<T> curr=top;
+        QueueNode<T> curr=top;
         while (curr!=null){
             System.out.print(curr.data+"  ");
             curr=curr.next;
