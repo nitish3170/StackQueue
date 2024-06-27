@@ -21,8 +21,8 @@ public class Queue<T> {
         queue.enqueue(30);
         queue.enqueue(56);
         queue.display();
-//        queue.deQueue();
-//        queue.display();
+        queue.deQueue();
+        queue.display();
     }
     public void enqueue(int val){
         QueueNode<T> newNode=new QueueNode(val);
@@ -33,36 +33,36 @@ public class Queue<T> {
         rear.next=newNode;
         rear=newNode;
     }
-//    public T deQueue(){
-//        if (front==null){
-//            return null;
-//        }
-//        T data=front.data;
-//        front=front.next;
-//        if (front == null) {
-//            rear = null;
-//        }
-//        return data;
-//    }
-//    public T peek(){
-//        if (front==null){
-//            return null;
-//        }
-//        return front.data;
-//    }
-//    public boolean isEmpty(){
-//        return rear==null;
-//    }
-//    public int size(){
-//        if (front==null) return 0;
-//        int c=0;
-//        QueueNode<T> check=front;
-//        while (check!=null){
-//            c++;
-//            check=check.next;
-//        }
-//        return c;
-//    }
+    public T deQueue(){
+        if (front==null){
+            return null;
+        }
+        T data=front.data;
+        front=front.next;
+        if (front == null) {
+            rear = null;
+        }
+        return data;
+    }
+    public T peek(){
+        if (front==null){
+            return null;
+        }
+        return front.data;
+    }
+    public boolean isEmpty(){
+        return rear==null;
+    }
+    public int size(){
+        if (front==null) return 0;
+        int c=0;
+        QueueNode<T> check=front;
+        while (check!=null){
+            c++;
+            check=check.next;
+        }
+        return c;
+    }
     public void display(){
         if (front==null) System.out.println("Stack is empty");
         QueueNode<T> curr=front;
